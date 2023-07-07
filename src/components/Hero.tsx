@@ -1,6 +1,5 @@
-import Container from './Container';
-import NarrowContainer from './NarrowContainer';
-import { motion } from 'framer-motion';
+import Container from "./Container";
+import NarrowContainer from "./NarrowContainer";
 
 export default function Hero() {
   return (
@@ -8,15 +7,11 @@ export default function Hero() {
       <Container>
         <NarrowContainer>
           <div className="py-32 px-8">
-            <motion.h1
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1, delay: 0.25 }}
-              className="text-5xl font-bold leading-snug md:text-6xl md:leading-snug"
-            >
-              Christian Enevoldsen Freelance Fullstack udvikler
-            </motion.h1>
+            <h1 className="text-5xl font-bold leading-snug md:text-6xl md:leading-snug animate-fade-in-blur opacity-0 origin-bottom">
+              Christian Enevoldsen
+              <br />
+              Freelance Fullstack udvikler
+            </h1>
           </div>
         </NarrowContainer>
       </Container>
