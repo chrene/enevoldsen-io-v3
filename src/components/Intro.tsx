@@ -3,7 +3,7 @@ import NarrowContainer from "./NarrowContainer";
 
 export default function Intro() {
   return (
-    <div>
+    <section id="intro">
       <Container>
         <NarrowContainer>
           <div className="py-32 px-8">
@@ -44,6 +44,6 @@ export default function Intro() {
           </div>
         </NarrowContainer>
       </Container>
-    </div>
+    </section>
   );
 }

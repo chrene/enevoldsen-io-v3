@@ -86,7 +86,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div>
+    <section id="services">
       <Container>
         <div className="py-32 px-8">
           <h2 className="font-medium text-5xl">Det kan jeg hjælpe med</h2>
@@ -124,6 +124,6 @@ export default function Services() {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 }

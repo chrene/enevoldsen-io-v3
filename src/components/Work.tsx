@@ -2,7 +2,7 @@ import Container from "./Container";
 
 export default function Work() {
   return (
-    <div>
+    <section id="work">
       <Container>
         <div className="py-32 px-8">
           <h2 className="font-medium text-5xl">Det har jeg lavet</h2>
@@ -13,6 +13,6 @@ export default function Work() {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 }

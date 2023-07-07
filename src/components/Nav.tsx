@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import avatar from "/avatar.jpeg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import { useCurrentPage } from "../hooks/useCurrentPage";
 
 const navMotion = {
   visible: {
@@ -32,6 +33,8 @@ const itemMotion = {
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
   const matches = useMediaQuery("(min-width: 1280px)");
+  const page = useCurrentPage();
+
 
   return (
     <nav
@@ -67,10 +70,10 @@ export default function Nav() {
         </h1>
 
         {matches && (
-          <div className="flex gap-12 justify-self-end">
-            <a href="/#about">Home</a>
-            <a href="/#projects">Projects</a>
-            <a href="/#contact">Contact</a>
+          <div className="flex gap-12 justify-self-end fixed backdrop-blur-lg p-4 px-6 -mx-6 bg-transparent rounded-xl">
+            <a aria-current={page === "intro"} className="[&[aria-current='true']]:text-blue-400" href="/#intro">Home</a>
+            <a aria-current={page === "work"} className="[&[aria-current='true']]:text-blue-400" href="/#work">Work</a>
+            <a aria-current={page === "services"} className="[&[aria-current='true']]:text-blue-400" href="/#services">Services</a>
           </div>
         )}
 
@@ -78,7 +81,7 @@ export default function Nav() {
           <button
             aria-checked={toggled}
             onClick={() => setToggled((prev) => !prev)}
-            className="space-y-1.5 cursor-pointer z-50 justify-self-end [&[aria-checked='true']]:fixed"
+            className="space-y-1.5 cursor-pointer z-50 justify-self-end fixed backdrop-blur-lg p-4 -mx-4 bg-transparent rounded-xl"
           >
             <motion.span
               animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
@@ -115,23 +118,23 @@ export default function Nav() {
               <motion.a
                 variants={itemMotion}
                 onClick={() => setToggled(false)}
-                href="/#about"
+                href="/#intro"
               >
                 Home
               </motion.a>
               <motion.a
                 variants={itemMotion}
                 onClick={() => setToggled(false)}
-                href="/#projects"
+                href="/#work"
               >
-                Projects
+                Work
               </motion.a>
               <motion.a
                 variants={itemMotion}
                 onClick={() => setToggled(false)}
-                href="/#contact"
+                href="/#services"
               >
-                Contact
+                Services
               </motion.a>
             </motion.div>
           </motion.div>
