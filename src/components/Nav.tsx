@@ -1,14 +1,14 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import avatar from '/avatar.jpeg';
-import { useMediaQuery } from '../hooks/useMediaQuery';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import avatar from "/avatar.jpeg";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const navMotion = {
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: 0.05,
     },
   },
@@ -31,11 +31,14 @@ const itemMotion = {
 
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
-  const matches = useMediaQuery('(min-width: 1280px)');
+  const matches = useMediaQuery("(min-width: 1280px)");
 
   return (
-    <nav className="bg-teal-50 relative">
-      <div className="mx-8  grid grid-cols-3 items-center pt-12 pb-6 font-medium md:mx-16 lg:mx-32">
+    <nav
+      className="bg-teal-50 relative z-50 select-none"
+      aria-expanded={toggled}
+    >
+      <div className="mx-8 grid grid-cols-3 items-center pt-12 pb-6 font-medium md:mx-16 lg:mx-32">
         <svg
           className="absolute bottom-0 left-1/2 -translate-x-1/2 hidden sm:block"
           width="250"
@@ -44,10 +47,19 @@ export default function Nav() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M2 2L428 2" stroke="#282828" strokeLinecap="round" strokeWidth={2} />
+          <path
+            d="M2 2L428 2"
+            stroke="#282828"
+            strokeLinecap="round"
+            strokeWidth={2}
+          />
         </svg>
         <div>
-          <img src={avatar} className="w-16 h-16 rounded-full" alt="profilbillede af Christian" />
+          <img
+            src={avatar}
+            className="w-16 h-16 rounded-full"
+            alt="profilbillede af Christian"
+          />
         </div>
 
         <h1 className="text-lg font-bold text-center">
@@ -63,9 +75,10 @@ export default function Nav() {
         )}
 
         {!matches && (
-          <div
+          <button
+            aria-checked={toggled}
             onClick={() => setToggled((prev) => !prev)}
-            className="space-y-1.5 cursor-pointer z-50 justify-self-end"
+            className="space-y-1.5 cursor-pointer z-50 justify-self-end [&[aria-checked='true']]:fixed"
           >
             <motion.span
               animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
@@ -83,7 +96,7 @@ export default function Nav() {
               }}
               className="block h-0.5 w-4 bg-black"
             ></motion.span>
-          </div>
+          </button>
         )}
 
         {toggled && !matches && (
@@ -99,13 +112,25 @@ export default function Nav() {
               initial="hidden"
               className="flex flex-col gap-24 text-lg"
             >
-              <motion.a variants={itemMotion} href="/#about">
+              <motion.a
+                variants={itemMotion}
+                onClick={() => setToggled(false)}
+                href="/#about"
+              >
                 Home
               </motion.a>
-              <motion.a variants={itemMotion} href="/#projects">
+              <motion.a
+                variants={itemMotion}
+                onClick={() => setToggled(false)}
+                href="/#projects"
+              >
                 Projects
               </motion.a>
-              <motion.a variants={itemMotion} href="/#contact">
+              <motion.a
+                variants={itemMotion}
+                onClick={() => setToggled(false)}
+                href="/#contact"
+              >
                 Contact
               </motion.a>
             </motion.div>

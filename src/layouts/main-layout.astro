@@ -3,15 +3,15 @@ import Nav from '../components/Nav';
 const { title } = Astro.props;
 ---
 
-<html lang="da">
+<html lang="da" class="[scroll-behavior:smooth] [scrollbar-gutter:stable]">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Dette er en side om mig" />
 		<meta title={title} />
 	</head>
-	<body class="">
-		<main class="h-screen relative">
+	<body class="w-full">
+		<main>
 			<Nav client:load />
 			<slot />
 		</main>
