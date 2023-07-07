@@ -1,10 +1,9 @@
-import { motion } from 'framer-motion';
-import Container from './Container';
+import Container from "./Container";
 
 const services = [
   {
-    title: 'Hjemmeside',
-    subtitle: 'Design og udvikling af hjemmesider',
+    title: "Hjemmeside",
+    subtitle: "Design og udvikling af hjemmesider",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,8 +22,8 @@ const services = [
     ),
   },
   {
-    title: 'Udvikling',
-    subtitle: 'Frontend og backend udvikling i React og Node.js',
+    title: "Udvikling",
+    subtitle: "Frontend og backend udvikling i React og Node.js",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +59,8 @@ const services = [
         />
       </svg>
     ),
-    title: 'Produkt / MVP',
-    subtitle: 'Hjælp til at få dit produkt eller MVP på markedet',
+    title: "Produkt / MVP",
+    subtitle: "Hjælp til at få dit produkt eller MVP på markedet",
   },
   {
     icon: (
@@ -80,8 +79,8 @@ const services = [
         />
       </svg>
     ),
-    title: 'Rådgivning',
-    subtitle: 'Rådgivning omkring teknologi, digitalisering og scrum',
+    title: "Rådgivning",
+    subtitle: "Rådgivning omkring teknologi, digitalisering og scrum",
   },
 ];
 
