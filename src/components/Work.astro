@@ -1,0 +1,60 @@
+---
+import Container from './Container.astro';
+import Icon from './Icon.astro';
+
+const projects = [
+  {
+    title: 'Project 1',
+    featuredImage: '/klaskefar.png',
+    href: '#',
+  },
+  {
+    title: 'Project 2',
+    featuredImage: '/klaskefar.png',
+    href: '#',
+  },
+  {
+    title: 'Project 3',
+    featuredImage: '/klaskefar.png',
+    href: '#',
+  },
+  {
+    title: 'Project 4',
+    featuredImage: '/klaskefar.png',
+    href: '#',
+  },
+  {
+    title: 'Project 5',
+    featuredImage: '/klaskefar.png',
+    href: '#',
+  },
+];
+---
+
+<section id="work">
+  <Container>
+    <div class="py-24 px-8">
+      <h2 class="font-medium text-5xl">Det har jeg lavet</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        {
+          projects.map((project) => (
+            <a class="group cursor-pointer space-y-8" href={project.href}>
+              <div class="rounded-lg overflow-hidden">
+                <img src={project.featuredImage} alt="" />
+              </div>
+              <div class="flex gap-2 items-center group">
+                <div class="text-lg font-medium transition-transform duration-300 group-hover:-translate-x-0.5">
+                  {project.title}
+                </div>
+                <Icon
+                  name="arrow-right"
+                  class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

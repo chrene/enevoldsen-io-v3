@@ -1,0 +1,38 @@
+---
+import Container from './Container.astro';
+import { getCollection, getEntry } from 'astro:content';
+import Icon from './Icon.astro';
+const allServices = await getCollection('services');
+---
+
+<section id="services">
+  <Container>
+    <div class="py-24 px-8">
+      <h2 class="font-medium text-5xl">Det kan jeg hjælpe med</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        {
+          allServices.map((service) => (
+            <div class="bg-white rounded-lg shadow-lg group cursor-pointer">
+              <div class="p-8">
+                <div class="flex gap-4 mb-4 flex-col">
+                  <div class="mr-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:text-blue-600">
+                    <Icon name={service.data.icon} class="w-8 h-8" />
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <div class="text-lg font-medium transition-transform duration-300 group-hover:-translate-x-0.5">
+                      {service.data.title}
+                    </div>
+                    <Icon
+                      name={'arrow-right'}
+                      class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>
