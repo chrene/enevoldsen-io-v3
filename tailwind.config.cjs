@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
       animation: {
         "fade-in-down": "fade-in-down 1s 80ms ease-in-out forwards",
         "fade-in-blur": "fade-in-blur 1s ease-in-out forwards",
