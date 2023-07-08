@@ -2,12 +2,13 @@
 import Container from './Container.astro';
 import { getCollection, getEntry } from 'astro:content';
 import Icon from './Icon.astro';
+import PaddingContainer from './PaddingContainer.astro';
 const allServices = await getCollection('services');
 ---
 
 <section id="services">
   <Container>
-    <div class="py-24 px-8">
+    <PaddingContainer>
       <h2 class="font-medium text-5xl">Det kan jeg hjælpe med</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
         {
@@ -33,6 +34,6 @@ const allServices = await getCollection('services');
           ))
         }
       </div>
-    </div>
+    </PaddingContainer>
   </Container>
 </section>
