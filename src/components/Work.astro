@@ -14,15 +14,19 @@ const allWork = await getCollection('work');
         <div class="border-b-2 border-b-slate-200"></div>
         <SectionHeader>Det har jeg arbedet med</SectionHeader>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mt-24">
         {
           allWork.map((work) => (
             <a class="group cursor-pointer space-y-8" href={`/work/${work.slug}`}>
               <div class="rounded-[1rem] overflow-hidden">
-                <img src={work.data.featuredImage} alt="" class="object-cover w-full" />
+                <img
+                  src={work.data.featuredImage}
+                  alt=""
+                  class="object-cover w-full transtion-transform duration-200 group-hover:rotate-2 group-hover:scale-105 cursor-pointer"
+                />
               </div>
               <div class="flex gap-2 items-center group">
-                <div class="text-lg font-medium transition-transform duration-300 group-hover:-translate-x-0.5">
+                <div class="text-xl font-medium transition-transform duration-300 group-hover:-translate-x-0.5">
                   {work.data.title}
                 </div>
                 <Icon
@@ -30,7 +34,7 @@ const allWork = await getCollection('work');
                   class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
                 />
               </div>
-              <span class="text-base font-normal text-gray-700">{work.data.description}</span>
+              <span class="text-lg font-normal text-gray-700">{work.data.description}</span>
             </a>
           ))
         }

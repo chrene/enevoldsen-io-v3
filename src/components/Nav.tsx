@@ -57,24 +57,24 @@ export default function Nav() {
         </h1>
 
         {matches && (
-          <div className="flex gap-12 justify-self-end fixed backdrop-blur-lg p-4 px-6 -mx-6 bg-transparent rounded-xl">
+          <div className="flex gap-12 justify-self-end fixed backdrop-blur-lg p-4 px-6 -mx-6 bg-white/70 rounded-xl">
             <a
               aria-current={page === 'intro'}
-              className="[&[aria-current='true']]:text-blue-400"
+              className="[&[aria-current='true']]:text-blue-500"
               href="/#intro"
             >
               Intro
             </a>
             <a
               aria-current={page === 'arbejde'}
-              className="[&[aria-current='true']]:text-blue-400"
+              className="[&[aria-current='true']]:text-blue-500"
               href="/#arbejde"
             >
               Arbejde
             </a>
             <a
               aria-current={page === 'services'}
-              className="[&[aria-current='true']]:text-blue-400"
+              className="[&[aria-current='true']]:text-blue-500"
               href="/#services"
             >
               Services
