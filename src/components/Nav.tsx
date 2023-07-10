@@ -107,9 +107,9 @@ export default function Nav() {
         {!matches && (
           <div
             className={clsx(
-              'fixed bg-white bottom-0 left-0 w-full h-screen flex items-center justify-center transform transition-all duration-300',
+              'fixed pointer-events-none bg-white bottom-0 left-0 w-full h-screen flex items-center justify-center transform transition-all duration-300',
               {
-                'opacity-100': toggled,
+                'opacity-100 pointer-events-auto': toggled,
                 'opacity-0': !toggled,
               }
             )}
