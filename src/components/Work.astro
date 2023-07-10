@@ -19,8 +19,8 @@ const allWork = await getCollection('work');
               <div class="rounded-[1rem] overflow-hidden">
                 <img
                   src={work.data.featuredImage}
-                  alt=""
-                  class="object-cover w-full transtion-transform duration-200 group-hover:rotate-2 group-hover:scale-105 cursor-pointer"
+                  alt={work.data.title}
+                  class="object-cover w-full min-w-[300px] min-h-[250px] lg:w-[600px] lg:h-[450px] transtion-transform duration-200 group-hover:rotate-2 group-hover:scale-105 cursor-pointer"
                 />
               </div>
               <div class="flex gap-2 items-center group">
