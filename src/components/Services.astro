@@ -8,12 +8,10 @@ const allServices = await getCollection('services');
 ---
 
 <section id="services">
+  <div class="border-b-2 border-b-slate-100"></div>
   <Container>
     <PaddingContainer>
-      <div class="flex flex-col lg:flex-row gap-16 justify-center lg:items-center">
-        <SectionHeader>Det kan jeg hjælpe med</SectionHeader>
-        <div class="border-b-2 w-full border-b-slate-200"></div>
-      </div>
+      <SectionHeader>Det kan jeg hjælpe med</SectionHeader>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24">
         {
           allServices.map((service) => (
