@@ -1,6 +1,6 @@
 ---
 title: Lynfaktura.dk
-description: Simpelt værktøj til at lave faktura PDF'er
+description: App til at danne faktura PDF'er. Skrevet med NextJS
 featuredImage: /lynfaktura.jpg
 link: https://lynfaktura.dk?ref=enevoldsen.io
 ---

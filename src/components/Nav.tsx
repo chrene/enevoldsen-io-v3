@@ -63,7 +63,7 @@ export default function Nav() {
               className="[&[aria-current='true']]:text-blue-500"
               href="/#intro"
             >
-              Intro
+              Hjem
             </a>
             <a
               aria-current={page === 'arbejde'}
@@ -73,11 +73,32 @@ export default function Nav() {
               Arbejde
             </a>
             <a
+              aria-current={page === 'erfaring'}
+              className="[&[aria-current='true']]:text-blue-500"
+              href="/#erfaring"
+            >
+              Erfaring
+            </a>
+            <a
+              aria-current={page === 'om'}
+              className="[&[aria-current='true']]:text-blue-500"
+              href="/#om"
+            >
+              Om
+            </a>
+            {/* <a
               aria-current={page === 'services'}
               className="[&[aria-current='true']]:text-blue-500"
               href="/#services"
             >
               Services
+            </a> */}
+            <a
+              aria-current={page === 'kontakt'}
+              className="[&[aria-current='true']]:text-blue-500"
+              href="/#kontakt"
+            >
+              Kontakt
             </a>
           </div>
         )}
@@ -86,7 +107,7 @@ export default function Nav() {
           <button
             aria-checked={toggled}
             onClick={() => setToggled((prev) => !prev)}
-            className="space-y-1.5 cursor-pointer z-50 justify-self-end fixed backdrop-blur-lg p-4 -mx-4 bg-transparent rounded-xl"
+            className="space-y-1.5 cursor-pointer z-50 justify-self-end fixed backdrop-blur-lg p-4 -mx-4 bg-white/70 rounded-xl"
           >
             <motion.span
               animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
@@ -118,16 +139,25 @@ export default function Nav() {
               variants={navMotion}
               animate="visible"
               initial="hidden"
-              className="flex flex-col gap-24 text-lg"
+              className="flex flex-col gap-8 text-lg"
             >
               <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#intro">
-                Intro
+                Hjem
               </motion.a>
               <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#arbjede">
                 Arbejde
               </motion.a>
-              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#services">
+              {/* <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#services">
                 Services
+              </motion.a> */}
+              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#erfaring">
+                Erfaring
+              </motion.a>
+              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#om">
+                Om
+              </motion.a>
+              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#kontakt">
+                Kontakt
               </motion.a>
             </motion.div>
           </motion.div>

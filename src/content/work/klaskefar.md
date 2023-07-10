@@ -1,6 +1,6 @@
 ---
 title: Klaskefar
-description: Hjemmeside bygget med Remix
+description: Hjemmeside udviklet med Remix frameworket.
 featuredImage: /klaskefar.jpg
 link: https://klaskefar.dk?ref=enevoldsen.io
 ---
