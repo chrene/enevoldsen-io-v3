@@ -12,7 +12,7 @@ const allWork = await getCollection('work');
   <Container>
     <PaddingContainer>
       <SectionHeader>Det har jeg arbedet med</SectionHeader>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mt-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mt-12 lg:mt-24">
         {
           allWork.map((work) => (
             <a class="group cursor-pointer space-y-8" href={work.data.link} target="_blank">

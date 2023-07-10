@@ -107,7 +107,7 @@ export default function Nav() {
           <button
             aria-checked={toggled}
             onClick={() => setToggled((prev) => !prev)}
-            className="space-y-1.5 cursor-pointer z-50 justify-self-end fixed backdrop-blur-lg p-4 -mx-4 bg-white/70 rounded-xl"
+            className="space-y-1.5 cursor-pointer z-50 justify-self-end right-8 fixed backdrop-blur-lg p-4 -mx-4 bg-white/70 rounded-xl"
           >
             <motion.span
               animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
