@@ -17,7 +17,7 @@ const allWork = await getCollection('work');
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mt-24">
         {
           allWork.map((work) => (
-            <a class="group cursor-pointer space-y-8" href={`/work/${work.slug}`}>
+            <a class="group cursor-pointer space-y-8" href={work.data.link} target="_blank">
               <div class="rounded-[1rem] overflow-hidden">
                 <img
                   src={work.data.featuredImage}

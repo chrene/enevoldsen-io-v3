@@ -12,6 +12,7 @@ const workCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     featuredImage: z.string(),
+    link: z.string(),
   }),
 });
 const experienceCollection = defineCollection({
