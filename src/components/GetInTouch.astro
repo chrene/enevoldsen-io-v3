@@ -1,0 +1,42 @@
+---
+import Container from './Container.astro';
+import Icon from './Icon.astro';
+import PaddingContainer from './PaddingContainer.astro';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section id="kontakt">
+  <Container>
+    <PaddingContainer>
+      <div class="flex flex-col gap-16">
+        <div class="border-b-2 border-b-slate-200"></div>
+        <SectionHeader>Kontakt</SectionHeader>
+      </div>
+      <div class="flex flex-col gap-4 w-1/2">
+        <h4 class="text-6xl font-medium mt-16">Har du et projekt?</h4>
+        <p class="text-xl leading-relaxed mt-8">
+          Har du et projekt eller en udviklingsopgave du vil snakke om? Så skriv en mail til <a
+            href="mailto:c@enevoldsen.io"
+            class="underline">c@enevoldsen.io</a
+          >.
+          <br />
+          <br />
+          Jeg kan hjælpe med bl.a. udvikling af hjemmesider, webapps, produkt videreudvikling og MVP'er.
+          Dertil kan jeg også hjælpe med generel rådgivning omkring teknologi og udvikling.
+        </p>
+        <div class="flex flex-col gap-4 mt-8">
+          <a
+            href="mailto:c@enevoldsen.io"
+            class="bg-white border-slate-200 border w-fit font-medium text-xl flex px-6 gap-2 py-4 rounded-lg items-center justify-center group hover:shadow-xl transition-shadow duration-300"
+          >
+            Send en email
+            <Icon
+              name="arrow-right"
+              class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </a>
+        </div>
+      </div>
+    </PaddingContainer>
+  </Container>
+</section>

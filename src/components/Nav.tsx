@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import avatar from "/avatar.jpeg";
-import { useMediaQuery } from "../hooks/useMediaQuery";
-import { useCurrentPage } from "../hooks/useCurrentPage";
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import avatar from '/avatar.jpeg';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import { useCurrentPage } from '../hooks/useCurrentPage';
 
 const navMotion = {
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.05,
     },
   },
@@ -32,15 +32,11 @@ const itemMotion = {
 
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
-  const matches = useMediaQuery("(min-width: 1280px)");
+  const matches = useMediaQuery('(min-width: 1280px)');
   const page = useCurrentPage();
 
-
   return (
-    <nav
-      className="bg-teal-50 relative z-50 select-none"
-      aria-expanded={toggled}
-    >
+    <nav className="bg-blue-50 relative z-50 select-none" aria-expanded={toggled}>
       <div className="mx-8 grid grid-cols-3 items-center pt-12 pb-6 font-medium md:mx-16 lg:mx-32">
         <svg
           className="absolute bottom-0 left-1/2 -translate-x-1/2 hidden sm:block"
@@ -50,19 +46,10 @@ export default function Nav() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M2 2L428 2"
-            stroke="#282828"
-            strokeLinecap="round"
-            strokeWidth={2}
-          />
+          <path d="M2 2L428 2" stroke="#282828" strokeLinecap="round" strokeWidth={2} />
         </svg>
         <div>
-          <img
-            src={avatar}
-            className="w-16 h-16 rounded-full"
-            alt="profilbillede af Christian"
-          />
+          <img src={avatar} className="w-16 h-16 rounded-full" alt="profilbillede af Christian" />
         </div>
 
         <h1 className="text-lg font-bold text-center">
@@ -71,9 +58,27 @@ export default function Nav() {
 
         {matches && (
           <div className="flex gap-12 justify-self-end fixed backdrop-blur-lg p-4 px-6 -mx-6 bg-transparent rounded-xl">
-            <a aria-current={page === "intro"} className="[&[aria-current='true']]:text-blue-400" href="/#intro">Home</a>
-            <a aria-current={page === "work"} className="[&[aria-current='true']]:text-blue-400" href="/#work">Work</a>
-            <a aria-current={page === "services"} className="[&[aria-current='true']]:text-blue-400" href="/#services">Services</a>
+            <a
+              aria-current={page === 'intro'}
+              className="[&[aria-current='true']]:text-blue-400"
+              href="/#intro"
+            >
+              Intro
+            </a>
+            <a
+              aria-current={page === 'arbejde'}
+              className="[&[aria-current='true']]:text-blue-400"
+              href="/#arbejde"
+            >
+              Arbejde
+            </a>
+            <a
+              aria-current={page === 'services'}
+              className="[&[aria-current='true']]:text-blue-400"
+              href="/#services"
+            >
+              Services
+            </a>
           </div>
         )}
 
@@ -115,25 +120,13 @@ export default function Nav() {
               initial="hidden"
               className="flex flex-col gap-24 text-lg"
             >
-              <motion.a
-                variants={itemMotion}
-                onClick={() => setToggled(false)}
-                href="/#intro"
-              >
-                Home
+              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#intro">
+                Intro
               </motion.a>
-              <motion.a
-                variants={itemMotion}
-                onClick={() => setToggled(false)}
-                href="/#work"
-              >
-                Work
+              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#arbjede">
+                Arbejde
               </motion.a>
-              <motion.a
-                variants={itemMotion}
-                onClick={() => setToggled(false)}
-                href="/#services"
-              >
+              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#services">
                 Services
               </motion.a>
             </motion.div>

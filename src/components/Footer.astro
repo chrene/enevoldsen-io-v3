@@ -1,0 +1,43 @@
+---
+import Container from './Container.astro';
+import Icon from './Icon.astro';
+import NarrowContainer from './NarrowContainer.astro';
+import PaddingContainer from './PaddingContainer.astro';
+---
+
+<footer class="bg-slate-300">
+  <Container>
+    <NarrowContainer>
+      <PaddingContainer>
+        <div class="flex flex-col gap-8">
+          <h3 class="text-4xl font-medium leading-snug">
+            Christian Enevoldsen
+            <br />
+            Freelance Fullstack udvikler
+          </h3>
+          <div class="flex flex-row gap-4">
+            <a
+              href="mailto:c@enevoldsen.io"
+              class="bg-white font-medium text-xl flex px-6 gap-2 py-4 rounded-lg items-center justify-center group hover:shadow-xl transition-shadow duration-300"
+            >
+              Send en email
+              <Icon
+                name="arrow-right"
+                class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </a>
+          </div>
+          <div class="mt-16">
+            <ul class="flex flex-row gap-8 text-slate-700 text-sm">
+              <li>
+                Side bygget med <a href="https://astro.com" class="underline font-bold">Astro</a>
+              </li>
+              <li><a href="tel:004553768161" class="font-bold">+45 5376 8161</a></li>
+              <li>&copy; 2023 | Alle rettigheder forbeholdes</li>
+            </ul>
+          </div>
+        </div>
+      </PaddingContainer>
+    </NarrowContainer>
+  </Container>
+</footer>

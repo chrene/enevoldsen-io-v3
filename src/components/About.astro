@@ -1,0 +1,29 @@
+---
+import Container from './Container.astro';
+import Icon from './Icon.astro';
+import PaddingContainer from './PaddingContainer.astro';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section id="om">
+  <Container>
+    <PaddingContainer>
+      <div class="flex flex-col gap-16">
+        <div class="border-b-2 border-b-slate-200"></div>
+        <SectionHeader>Om mig</SectionHeader>
+      </div>
+      <div class="gap-32 grid grid-cols-1 lg:grid-cols-2 mt-16">
+        <p class="text-3xl font-medium leading-snug">
+          Mit navn er Christian - En teknologi-entusiast, udvikler og webdesigner.
+          <br />
+          Min ekspertise dækker en bred vifte af områder lige fra design til udvikling og implementering.
+        </p>
+        <p class="text-xl leading-relaxed">
+          Det startede med at jeg som 18-årig begyndte at udvikle hjemmesider og webapplikationer.
+          Siden da har jeg udviklet mig til at blive en dygtig udvikler med en bred vifte af
+          kompetencer.
+        </p>
+      </div>
+    </PaddingContainer>
+  </Container>
+</section>
