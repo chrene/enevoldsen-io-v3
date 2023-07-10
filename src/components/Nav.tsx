@@ -1,34 +1,8 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import avatar from '/avatar.jpeg';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { useCurrentPage } from '../hooks/useCurrentPage';
-
-const navMotion = {
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.05,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    y: 25,
-  },
-};
-
-const itemMotion = {
-  visible: {
-    opacity: 1,
-    x: 0,
-  },
-  hidden: {
-    opacity: 0,
-    x: -100,
-  },
-};
+import clsx from 'clsx';
 
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
@@ -109,58 +83,93 @@ export default function Nav() {
             onClick={() => setToggled((prev) => !prev)}
             className="space-y-1.5 cursor-pointer z-50 justify-self-end right-8 fixed backdrop-blur-lg p-4 -mx-4 bg-white/70 rounded-xl"
           >
-            <motion.span
-              animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
-              className="block h-0.5 w-8 bg-black"
-            ></motion.span>
-            <motion.span
-              animate={{ width: toggled ? 0 : 24, opacity: toggled ? 0 : 1 }}
-              className="block h-0.5 w-6 bg-black"
-            ></motion.span>
-            <motion.span
-              animate={{
-                rotateZ: toggled ? -45 : 0,
-                y: toggled ? -8 : 0,
-                width: toggled ? 32 : 16,
-              }}
-              className="block h-0.5 w-4 bg-black"
-            ></motion.span>
+            <span
+              className={clsx('block h-0.5 w-8 bg-black transition-all transform duration-300', {
+                'rotate-45 translate-y-[8px]': toggled,
+                'rotate-0 translate-y-[0px]': !toggled,
+              })}
+            ></span>
+            <span
+              className={clsx('block h-0.5 w-6 bg-black transition-all  transform duration-300', {
+                'opacity-0 w-0': toggled,
+                'w-4 opacity-100': !toggled,
+              })}
+            ></span>
+            <span
+              className={clsx('block h-0.5 w-4 bg-black transition-all transform duration-300', {
+                '-rotate-45 -translate-y-[8px] w-[32px]': toggled,
+                'rotate-0 translate-y-[0px] w-[16px]': !toggled,
+              })}
+            ></span>
           </button>
         )}
 
-        {toggled && !matches && (
-          <motion.div
-            animate={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 25 }}
-            exit={{ opacity: 0, x: 25 }}
-            className="fixed bg-white bottom-0 left-0 w-full h-screen flex items-center justify-center"
+        {!matches && (
+          <div
+            className={clsx(
+              'fixed bg-white bottom-0 left-0 w-full h-screen flex items-center justify-center transform transition-all duration-300',
+              {
+                'opacity-100': toggled,
+                'opacity-0': !toggled,
+              }
+            )}
           >
-            <motion.div
-              variants={navMotion}
-              animate="visible"
-              initial="hidden"
-              className="flex flex-col gap-8 text-lg"
-            >
-              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#intro">
+            <div className="flex flex-col gap-8 text-lg">
+              <a
+                onClick={() => setToggled(false)}
+                href="/#intro"
+                className={clsx('transform transition-all duration-300 delay-0', {
+                  'translate-x-0 opacity-100': toggled,
+                  'translate-x-[-100%] opacity-0': !toggled,
+                })}
+              >
                 Hjem
-              </motion.a>
-              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#arbjede">
+              </a>
+              <a
+                onClick={() => setToggled(false)}
+                href="/#arbjede"
+                className={clsx('transform transition-all duration-300 delay-75', {
+                  'translate-x-0 opacity-100': toggled,
+                  'translate-x-[-100%] opacity-0': !toggled,
+                })}
+              >
                 Arbejde
-              </motion.a>
-              {/* <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#services">
+              </a>
+              {/* <a  onClick={() => setToggled(false)} href="/#services">
                 Services
-              </motion.a> */}
-              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#erfaring">
+              </a> */}
+              <a
+                onClick={() => setToggled(false)}
+                href="/#erfaring"
+                className={clsx('transform transition-all duration-300 delay-150', {
+                  'translate-x-0 opacity-100': toggled,
+                  'translate-x-[-100%] opacity-0': !toggled,
+                })}
+              >
                 Erfaring
-              </motion.a>
-              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#om">
+              </a>
+              <a
+                onClick={() => setToggled(false)}
+                href="/#om"
+                className={clsx('transform transition-all duration-300 delay-200', {
+                  'translate-x-0 opacity-100': toggled,
+                  'translate-x-[-100%] opacity-0': !toggled,
+                })}
+              >
                 Om
-              </motion.a>
-              <motion.a variants={itemMotion} onClick={() => setToggled(false)} href="/#kontakt">
+              </a>
+              <a
+                onClick={() => setToggled(false)}
+                href="/#kontakt"
+                className={clsx('transform transition-all duration-300 delay-300', {
+                  'translate-x-0 opacity-100': toggled,
+                  'translate-x-[-100%] opacity-0': !toggled,
+                })}
+              >
                 Kontakt
-              </motion.a>
-            </motion.div>
-          </motion.div>
+              </a>
+            </div>
+          </div>
         )}
       </div>
     </nav>
