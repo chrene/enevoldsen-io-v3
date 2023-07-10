@@ -127,7 +127,7 @@ export default function Nav() {
               </a>
               <a
                 onClick={() => setToggled(false)}
-                href="/#arbjede"
+                href="/#arbejde"
                 className={clsx('transform transition-all duration-300 delay-75', {
                   'translate-x-0 opacity-100': toggled,
                   'translate-x-[-100%] opacity-0': !toggled,
