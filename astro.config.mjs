@@ -9,5 +9,6 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   output: 'server',
   adapter: vercel(),
+  site: 'https://enevoldsen.io',
   integrations: [react(), tailwind(), sitemap()]
 });
